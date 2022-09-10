@@ -27,11 +27,6 @@ namespace Wolfman_Game
         {
             cmbRace.Items.Add(race[0]);
             cmbRace.Items.Add(race[1]);
-            user1.userName = txtUserName.Text;
-            user1.weapon = cmbWeapon.Text;
-            user1.branch = cmbBranch.Text;
-            user1.race = cmbRace.Text;
-
         }
 
 
@@ -104,9 +99,13 @@ namespace Wolfman_Game
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
+            user1.userName = txtUserName.Text;
+            user1.weapon = cmbWeapon.Text;
+            user1.branch = cmbBranch.Text;
+            user1.race = cmbRace.Text;
             user1.Attack();
 
-            if(lblEnemy.Width <= 200)
+            if (lblEnemy.Width <= 200)
             {
                 lblEnemy.Width -= user1.damage;
                 MessageBox.Show($"Sevgili {user1.userName},\n düşmanınıza {user1.damage} kadar hasar verdiniz.");
@@ -117,6 +116,7 @@ namespace Wolfman_Game
                 lblEnemy.Visible = false;
                 pictureBox2.Visible = false;
                 btnAttack.Enabled = false;
+                btnAttack2.Visible = false;
             }
 
             
